@@ -1162,7 +1162,7 @@ function run_beautifier_tests(test_obj, Urlencoded, js_beautify)
         bt('xml=<a b="c"><![CDATA[d/></a></{}]]></a>;', 'xml = <a b="c"><![CDATA[d/></a></{}]]></a>;');
         // xml literals with special characters in elemen names
         // see http://www.w3.org/TR/REC-xml/#NT-NameChar
-        bt('xml = <_:.valid.xml-/>;', 'xml = <_:.valid.xml-/>;');
+        bt('xml = <_:.valid.xml- _:.valid.xml-="123"/>;', 'xml = <_:.valid.xml- _:.valid.xml-="123"/>;');
         // Handles messed up tags, as long as it isn't the same name
         // as the root tag. Also handles tags of same name as root tag
         // as long as nesting matches.
